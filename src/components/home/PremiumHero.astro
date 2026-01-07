@@ -1,15 +1,27 @@
 ---
 import { Image } from 'astro:assets';
 import Button from '../ui/Button.astro';
-import heroBgImg from '@assets/photo-1586528116311-ad8dd3c8310d.jpg';
+
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  buttonText?: string;
+}
+
+const { 
+  title = "Inv-es: Portal Interuniversitario de Producción Científica",
+  subtitle = "Un espacio común para la visibilidad, consulta y transferencia del conocimiento generado en el ámbito académico español.",
+  buttonText = "Más información"
+} = Astro.props;
 ---
 
 <section class="relative h-screen min-h-[600px] flex items-center overflow-hidden">
   <!-- Background Image with Overlay -->
   <div class="absolute inset-0">
     <Image 
-      src={heroBgImg}
-      alt="Modern logistics warehouse with advanced automation"
+      src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
+      alt="Abstract network connections representing scientific collaboration"
       class="w-full h-full object-cover"
       width={2070}
       height={1380}
@@ -30,23 +42,16 @@ import heroBgImg from '@assets/photo-1586528116311-ad8dd3c8310d.jpg';
       </div>
       
       <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-        Optimize Your Operations with
-        <span class="block text-transparent bg-clip-text bg-linear-to-r from-blue-400 via-teal-400 to-blue-400 mt-2">
-          AstroFlow
-        </span>
+        {title}
       </h1>
       
       <p class="text-xl md:text-2xl text-slate-200 mb-8 max-w-2xl leading-relaxed">
-        Transform your supply chain with our integrated logistics and manufacturing solutions. 
-        From warehousing to delivery, we power your success with cutting-edge technology.
+        {subtitle}
       </p>
       
       <div class="flex flex-col sm:flex-row gap-4 mb-12">
-        <Button href="/rfq" size="lg" class="bg-blue-600! hover:bg-blue-700! text-white! shadow-2xl!">
-          Request a Quote
-        </Button>
-        <Button href="/capabilities" size="lg" variant="outline" class="border-2! border-white! text-white! hover:bg-white/10! shadow-2xl!">
-          Explore Solutions
+        <Button href="#proyecto" size="lg" class="bg-blue-600! hover:bg-blue-700! text-white! shadow-2xl!">
+          {buttonText}
         </Button>
       </div>
 

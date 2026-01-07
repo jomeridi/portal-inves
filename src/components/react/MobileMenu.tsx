@@ -1,8 +1,16 @@
 import * as Dialog from '@radix-ui/react-dialog';
 import { Menu, X } from 'lucide-react';
-import { NAVIGATION } from '../../config/site';
 
-export default function MobileMenu() {
+interface NavItem {
+  name: string;
+  href: string;
+}
+
+interface MobileMenuProps {
+  navItems: readonly NavItem[];
+}
+
+export default function MobileMenu({ navItems }: MobileMenuProps) {
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild>
@@ -19,7 +27,7 @@ export default function MobileMenu() {
           <Dialog.Title className="sr-only">Navigation Menu</Dialog.Title>
           <Dialog.Description className="sr-only">Main navigation menu</Dialog.Description>
           <div className="container mx-auto px-4 py-6 space-y-2">
-            {NAVIGATION.map((item) => (
+            {navItems.map((item) => (
               <Dialog.Close asChild key={item.href}>
                 <a
                   href={item.href}
@@ -29,16 +37,6 @@ export default function MobileMenu() {
                 </a>
               </Dialog.Close>
             ))}
-            <div className="pt-4">
-              <Dialog.Close asChild>
-                <a
-                  href="/rfq"
-                  className="block text-center px-6 py-3 text-sm font-semibold text-white bg-linear-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-lg shadow-md transition-all"
-                >
-                  Request Quote
-                </a>
-              </Dialog.Close>
-            </div>
           </div>
           <Dialog.Close asChild>
             <button

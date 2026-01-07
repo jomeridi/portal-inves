@@ -1,6 +1,14 @@
 ---
 import { NAVIGATION, SOCIAL_LINKS, SITE } from '@config/site';
 import { Package, Linkedin, Twitter, Facebook } from 'lucide-react';
+import { languages } from '../i18n/ui';
+
+// Detect current locale from URL
+const currentPathname = Astro.url.pathname;
+const segments = currentPathname.split('/').filter(Boolean);
+const currentLocale = (segments[0] && Object.keys(languages).includes(segments[0])) ? segments[0] : 'es';
+const navItems = NAVIGATION[currentLocale as keyof typeof NAVIGATION] || NAVIGATION.es;
+const siteInfo = SITE[currentLocale as keyof typeof SITE] || SITE.es;
 ---
 
 <footer class="bg-slate-900 text-slate-300">
@@ -17,7 +25,7 @@ import { Package, Linkedin, Twitter, Facebook } from 'lucide-react';
           </span>
         </a>
         <p class="text-sm text-slate-400 leading-relaxed max-w-xs">
-          {SITE.description}
+          {siteInfo.description}
         </p>
         <div class="flex space-x-4">
           <a
@@ -50,7 +58,7 @@ import { Package, Linkedin, Twitter, Facebook } from 'lucide-react';
           Quick Links
         </h3>
         <ul class="space-y-3">
-          {NAVIGATION.map((item) => (
+          {navItems.map((item) => (
             <li>
               <a
                 href={item.href}

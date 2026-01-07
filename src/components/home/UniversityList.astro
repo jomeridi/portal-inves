@@ -1,0 +1,96 @@
+---
+import UniversityCard from './UniversityCard.astro';
+
+interface University {
+  name: string;
+  logo: string;
+  url: string;
+}
+
+interface Props {
+  collabTitle?: string;
+  mainTitle?: string;
+  desc?: string;
+  sponsorsTitle?: string;
+  participantsTitle?: string;
+}
+
+const {
+  collabTitle = "Red de Colaboración",
+  mainTitle = "Universidades Participantes",
+  desc = "El proyecto inv-es es posible gracias a la colaboración de numerosas instituciones académicas.",
+  sponsorsTitle = "Universidades Patrocinadoras",
+  participantsTitle = "Otras Universidades Participantes"
+} = Astro.props;
+
+const sponsoringUniversities: University[] = [
+  { name: "Universidad de Alcalá", logo: "/logos/UAH.png", url: "https://www.uah.es" },
+  { name: "Universidad de Burgos", logo: "/logos/UBU.png", url: "https://www.ubu.es" },
+  { name: "Universidade da Coruña", logo: "/logos/UDC.png", url: "https://www.udc.es" },
+  { name: "Universidad de Cádiz", logo: "/logos/UCA.png", url: "https://www.uca.es" },
+  { name: "Universidad de La Laguna", logo: "/logos/ULL.png", url: "https://www.ull.es" },
+  { name: "Universidad de La Rioja", logo: "/logos/UR.png", url: "https://www.unirioja.es" },
+  { name: "Universidad de León", logo: "/logos/UNILEON.png", url: "https://www.unileon.es" },
+  { name: "Universidad de Murcia", logo: "/logos/UM.png", url: "https://www.um.es" },
+  { name: "Universidad de Málaga", logo: "/logos/UMA.png", url: "https://www.uma.es" },
+  { name: "UNED", logo: "/logos/UNED.png", url: "https://www.uned.es" },
+  { name: "Universidad Pablo de Olavide", logo: "/logos/UPO.png", url: "https://www.upo.es" },
+  { name: "Universidad del País Vasco / EHU", logo: "/logos/EHU.png", url: "https://www.ehu.eus" },
+  { name: "Universidad de Salamanca", logo: "/logos/USAL.png", url: "https://www.usal.es" },
+  { name: "Universidade de Santiago de Compostela", logo: "/logos/USC.png", url: "https://www.usc.es" },
+  { name: "Universidad de Valladolid", logo: "/logos/UVA.png", url: "https://www.uva.es" },
+  { name: "Universitat de València", logo: "/logos/UV.png", url: "https://www.uv.es" }
+];
+
+const participatingUniversities: University[] = [
+  { name: "Universidad de Alicante", logo: "/logos/UA.png", url: "https://www.ua.es" },
+  { name: "Universidad Complutense de Madrid", logo: "/logos/UCM.png", url: "https://www.ucm.es" },
+  { name: "Universidad de Granada", logo: "/logos/UGR.png", url: "https://www.ugr.es" },
+  { name: "Universidad de Huelva", logo: "/logos/UHU.png", url: "https://www.uhu.es" },
+  { name: "Universidad de Jaén", logo: "/logos/UJAEN.png", url: "https://www.ujaen.es" },
+  { name: "Universitat de Lleida", logo: "/logos/UDL.png", url: "https://www.udl.cat" },
+  { name: "Universidad de Oviedo", logo: "/logos/UNIOVI.png", url: "https://www.uniovi.es" },
+  { name: "Universidad Politécnica de Cartagena", logo: "/logos/UPCT.png", url: "https://www.upct.es" },
+  { name: "Universidad Pública de Navarra", logo: "/logos/UNAVARRA.png", url: "https://www.unavarra.es" },
+  { name: "Universidad Miguel Hernández", logo: "/logos/UMH.png", url: "https://www.umh.es" },
+  { name: "Universitat de les Illes Balears", logo: "/logos/UIB.png", url: "https://www.uib.es" },
+  { name: "Universitat Jaume I", logo: "/logos/UJI.png", url: "https://www.uji.es" }
+];
+---
+
+<section id="proyecto" class="py-24 bg-linear-to-b from-slate-50 to-white">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <div class="inline-block px-4 py-2 mb-4 bg-blue-100 text-blue-800 text-sm font-semibold rounded-full">
+        {collabTitle}
+      </div>
+      <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+        {mainTitle}
+      </h2>
+      <p class="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+        {desc}
+      </p>
+    </div>
+
+    <!-- Sponsoring Universities -->
+    <div class="mb-16">
+      <h3 class="text-3xl font-bold text-slate-800 mb-8 text-center border-b pb-4 border-slate-200">{sponsorsTitle}</h3>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 items-stretch">
+        {sponsoringUniversities.map((uni) => (
+          <UniversityCard name={uni.name} logo={uni.logo} url={uni.url} />
+        ))}
+      </div>
+    </div>
+
+    <!-- Other Participating Universities -->
+    <div>
+      <h3 class="text-3xl font-bold text-slate-800 mb-8 text-center border-b pb-4 border-slate-200">{participantsTitle}</h3>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 items-stretch">
+        {participatingUniversities.map((uni) => (
+          <UniversityCard name={uni.name} logo={uni.logo} url={uni.url} />
+        ))}
+      </div>
+    </div>
+    
+  </div>
+</section>

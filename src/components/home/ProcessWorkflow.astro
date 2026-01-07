@@ -1,16 +1,19 @@
 ---
 import { Image } from 'astro:assets';
 
-import discoveryImg from '@assets/photo-1454165804606-c3d57bc86b40.jpg';
-import implementationImg from '@assets/photo-1522071820081-009f0129c71c.jpg';
-import optimizationImg from '@assets/photo-1551288049-bebda4e38f71.jpg';
-import supportGrowthImg from '@assets/photo-1552664730-d307ca884978.jpg';
+const discoveryImg = "https://loremflickr.com/800/400/planning,strategy";
+const implementationImg = "https://loremflickr.com/800/400/teamwork,meeting";
+const optimizationImg = "https://loremflickr.com/800/400/analytics,graph";
+const supportGrowthImg = "https://loremflickr.com/800/400/growth,chart";
 
 interface Step {
   number: number;
   title: string;
   description: string;
-  image: ImageMetadata;
+  title: string;
+  description: string;
+  image: string;
+  alt: string;
   alt: string;
   hoverBorder: string;
   gradient: string;
