@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   site: "https://jomeridi.github.io",
-  base: "/portal-inves",
+  base: process.env.NODE_ENV === 'production' ? "/portal-inves" : "/",
   integrations: [react()],
   image: {
     domains: ["images.unsplash.com"],

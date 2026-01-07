@@ -33,7 +33,7 @@ const warehouseBgImg = "https://loremflickr.com/2070/1380/warehouse,modern";
       
       <div class="flex flex-col sm:flex-row gap-6 justify-center mb-16">
         <a 
-          href="/rfq"
+          href={import.meta.env.BASE_URL + 'rfq'}
           class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-blue-900 bg-white hover:bg-slate-100 rounded-lg shadow-2xl hover:shadow-3xl transition-all group"
         >
           Request a Quote
@@ -42,7 +42,7 @@ const warehouseBgImg = "https://loremflickr.com/2070/1380/warehouse,modern";
           </svg>
         </a>
         <a 
-          href="/facilities"
+          href={import.meta.env.BASE_URL + 'facilities'}
           class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white border-2 border-white hover:bg-white/10 rounded-lg shadow-2xl hover:shadow-3xl transition-all group"
         >
           Tour Our Facilities

@@ -16,7 +16,7 @@ const siteInfo = SITE[currentLocale as keyof typeof SITE] || SITE.es;
     <div class="grid grid-cols-1 gap-12 lg:grid-cols-4">
       <!-- Company Info -->
       <div class="lg:col-span-1 space-y-6">
-        <a href="/" class="flex items-center space-x-3 group">
+        <a href={import.meta.env.BASE_URL} class="flex items-center space-x-3 group">
           <div class="flex items-center justify-center w-12 h-12 rounded-lg bg-linear-to-br from-blue-600 to-teal-600">
             <Package className="w-7 h-7 text-white" />
           </div>
