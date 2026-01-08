@@ -18,7 +18,17 @@ const isActiveLink = (href: string) : boolean => {
 // Detect current locale from pathname
 const segments = currentPathname.split('/').filter(Boolean);
 const currentLocale = (segments[0] && Object.keys(languages).includes(segments[0])) ? segments[0] : 'es';
-const navItems = NAVIGATION[currentLocale as keyof typeof NAVIGATION] || NAVIGATION.es;
+const rawNavItems = NAVIGATION[currentLocale as keyof typeof NAVIGATION] || NAVIGATION.es;
+
+const formatUrl = (url: string) => {
+  const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+  return base + url;
+};
+
+const navItems = rawNavItems.map(item => ({
+  ...item, 
+  href: formatUrl(item.href)
+}));
 
 const getLocalizedPath = (pathname: string, locale: string) => {
   const segments = pathname.split('/').filter(Boolean);
