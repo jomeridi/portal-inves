@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@theme {
+  /* Global contrast override: Make text-slate-600 much darker for accessibility */
+  --color-slate-600: var(--color-slate-800);
+}
+
 /* Smooth scrolling */
 html {
   @apply scroll-smooth;

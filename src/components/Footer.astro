@@ -28,50 +28,49 @@ const navItems = rawNavItems.map(item => ({
 }));
 ---
 
-<footer class="bg-slate-900 text-slate-300">
+<footer class="bg-slate-50 text-slate-700 border-t border-slate-200">
   <div class="container mx-auto px-4 py-16 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 gap-12 lg:grid-cols-4">
       <!-- Company Info -->
+      <!-- Funding Logos & Institutional Info -->
       <div class="lg:col-span-1 space-y-6">
-        <a href={base + '/' + currentLocale} class="flex items-center space-x-3 group">
-          <div class="flex items-center justify-center w-12 h-12 rounded-lg bg-linear-to-br from-blue-600 to-teal-600">
-            <Package className="w-7 h-7 text-white" />
-          </div>
-          <span class="text-2xl font-bold text-white">
-            AstroFlow
-          </span>
-        </a>
-        <p class="text-sm text-slate-400 leading-relaxed max-w-xs">
-          {siteInfo.description}
-        </p>
-        <div class="flex space-x-4">
-          <a
-            href={SOCIAL_LINKS.linkedin}
-            class="w-10 h-10 flex items-center justify-center rounded-lg bg-slate-800 text-slate-400 hover:bg-blue-600 hover:text-white transition-all"
-            aria-label="LinkedIn"
-          >
-            <Linkedin className="w-5 h-5" />
-          </a>
-          <a
-            href={SOCIAL_LINKS.twitter}
-            class="w-10 h-10 flex items-center justify-center rounded-lg bg-slate-800 text-slate-400 hover:bg-blue-400 hover:text-white transition-all"
-            aria-label="Twitter"
-          >
-            <Twitter className="w-5 h-5" />
-          </a>
-          <a
-            href={SOCIAL_LINKS.facebook}
-            class="w-10 h-10 flex items-center justify-center rounded-lg bg-slate-800 text-slate-400 hover:bg-blue-500 hover:text-white transition-all"
-            aria-label="Facebook"
-          >
-            <Facebook className="w-5 h-5" />
-          </a>
+        <div class="flex flex-wrap gap-6 items-center">
+            <!-- Funding Logos -->
+            <div>
+                <img 
+                  src={base + '/logos/MCIU.Gob.Web.svg'} 
+                  alt="Ministerio de Ciencia, Innovación y Universidades" 
+                  class="w-auto h-auto"
+                />
+            </div>
+             <div>
+                <a href="https://next-generation-eu.europa.eu/index_es" target="_blank" rel="noopener noreferrer">
+                    <img 
+                      src={base + '/logos/NextGenerationEU_es.png'} 
+                      alt="Financiado por la Unión Europea - NextGenerationEU" 
+                      class="w-auto h-auto"
+                    />
+                </a>
+            </div>
+            <div>
+                <a href="https://planderecuperacion.gob.es/" target="_blank" rel="noopener noreferrer">
+                    <img 
+                      src={base + `/logos/logo-PRTR_${currentLocale}.png`} 
+                      alt="Plan de Recuperación, Transformación y Resiliencia" 
+                      class="w-auto h-auto"
+                    />
+                </a>
+            </div>
         </div>
+        
+        <p class="text-sm text-slate-600 leading-relaxed font-medium">
+          {t['footer.dialnet']}
+        </p>
       </div>
 
       <!-- Quick Links -->
       <div>
-        <h3 class="text-sm font-semibold uppercase tracking-wider text-white mb-6">
+        <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900 mb-6">
           {t['footer.quickLinks']}
         </h3>
         <ul class="space-y-3">
@@ -79,9 +78,9 @@ const navItems = rawNavItems.map(item => ({
             <li>
               <a
                 href={item.href}
-                class="text-sm text-slate-400 hover:text-blue-400 transition-colors inline-flex items-center group"
+                class="text-sm text-slate-600 hover:text-blue-600 transition-colors inline-flex items-center group"
               >
-                <span class="w-0 group-hover:w-2 h-0.5 bg-blue-400 transition-all mr-0 group-hover:mr-2"></span>
+                <span class="w-0 group-hover:w-2 h-0.5 bg-blue-600 transition-all mr-0 group-hover:mr-2"></span>
                 {item.name}
               </a>
             </li>
@@ -91,31 +90,31 @@ const navItems = rawNavItems.map(item => ({
 
       <!-- Services -->
       <div>
-        <h3 class="text-sm font-semibold uppercase tracking-wider text-white mb-6">
+        <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900 mb-6">
           Services
         </h3>
         <ul class="space-y-3">
           <li>
-            <a href="/capabilities" class="text-sm text-slate-400 hover:text-blue-400 transition-colors inline-flex items-center group">
-              <span class="w-0 group-hover:w-2 h-0.5 bg-blue-400 transition-all mr-0 group-hover:mr-2"></span>
+            <a href="/capabilities" class="text-sm text-slate-600 hover:text-blue-600 transition-colors inline-flex items-center group">
+              <span class="w-0 group-hover:w-2 h-0.5 bg-blue-600 transition-all mr-0 group-hover:mr-2"></span>
               Warehousing & Storage
             </a>
           </li>
           <li>
-            <a href="/capabilities" class="text-sm text-slate-400 hover:text-blue-400 transition-colors inline-flex items-center group">
-              <span class="w-0 group-hover:w-2 h-0.5 bg-blue-400 transition-all mr-0 group-hover:mr-2"></span>
+            <a href="/capabilities" class="text-sm text-slate-600 hover:text-blue-600 transition-colors inline-flex items-center group">
+              <span class="w-0 group-hover:w-2 h-0.5 bg-blue-600 transition-all mr-0 group-hover:mr-2"></span>
               Transportation
             </a>
           </li>
           <li>
-            <a href="/capabilities" class="text-sm text-slate-400 hover:text-blue-400 transition-colors inline-flex items-center group">
-              <span class="w-0 group-hover:w-2 h-0.5 bg-blue-400 transition-all mr-0 group-hover:mr-2"></span>
+            <a href="/capabilities" class="text-sm text-slate-600 hover:text-blue-600 transition-colors inline-flex items-center group">
+              <span class="w-0 group-hover:w-2 h-0.5 bg-blue-600 transition-all mr-0 group-hover:mr-2"></span>
               Manufacturing
             </a>
           </li>
           <li>
-            <a href="/capabilities" class="text-sm text-slate-400 hover:text-blue-400 transition-colors inline-flex items-center group">
-              <span class="w-0 group-hover:w-2 h-0.5 bg-blue-400 transition-all mr-0 group-hover:mr-2"></span>
+            <a href="/capabilities" class="text-sm text-slate-600 hover:text-blue-600 transition-colors inline-flex items-center group">
+              <span class="w-0 group-hover:w-2 h-0.5 bg-blue-600 transition-all mr-0 group-hover:mr-2"></span>
               Supply Chain Management
             </a>
           </li>
@@ -124,25 +123,25 @@ const navItems = rawNavItems.map(item => ({
 
       <!-- Contact -->
       <div>
-        <h3 class="text-sm font-semibold uppercase tracking-wider text-white mb-6">
+        <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900 mb-6">
           Get Started
         </h3>
         <ul class="space-y-3 text-sm">
           <li>
-            <a href="/rfq" class="text-slate-400 hover:text-blue-400 transition-colors inline-flex items-center group">
-              <span class="w-0 group-hover:w-2 h-0.5 bg-blue-400 transition-all mr-0 group-hover:mr-2"></span>
+            <a href="/rfq" class="text-slate-600 hover:text-blue-600 transition-colors inline-flex items-center group">
+              <span class="w-0 group-hover:w-2 h-0.5 bg-blue-600 transition-all mr-0 group-hover:mr-2"></span>
               Request a Quote
             </a>
           </li>
           <li>
-            <a href="/facilities" class="text-slate-400 hover:text-blue-400 transition-colors inline-flex items-center group">
-              <span class="w-0 group-hover:w-2 h-0.5 bg-blue-400 transition-all mr-0 group-hover:mr-2"></span>
+            <a href="/facilities" class="text-slate-600 hover:text-blue-600 transition-colors inline-flex items-center group">
+              <span class="w-0 group-hover:w-2 h-0.5 bg-blue-600 transition-all mr-0 group-hover:mr-2"></span>
               Find a Facility
             </a>
           </li>
           <li>
-            <a href="/documentation" class="text-slate-400 hover:text-blue-400 transition-colors inline-flex items-center group">
-              <span class="w-0 group-hover:w-2 h-0.5 bg-blue-400 transition-all mr-0 group-hover:mr-2"></span>
+            <a href="/documentation" class="text-slate-600 hover:text-blue-600 transition-colors inline-flex items-center group">
+              <span class="w-0 group-hover:w-2 h-0.5 bg-blue-600 transition-all mr-0 group-hover:mr-2"></span>
               Documentation
             </a>
           </li>
@@ -160,21 +159,21 @@ const navItems = rawNavItems.map(item => ({
     </div>
 
     <!-- Bottom Bar -->
-    <div class="mt-16 pt-8 border-t border-slate-800">
+    <div class="mt-16 pt-8 border-t border-slate-200">
       <div class="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-        <p class="text-sm text-slate-400">
-          &copy; {new Date().getFullYear()} {SITE.author}. All rights reserved.
+        <p class="text-sm text-slate-600">
+           {t['footer.copyright'].replace('{year}', new Date().getFullYear().toString())}
         </p>
         <div class="flex items-center space-x-6 text-sm">
-          <a href="/" class="text-slate-400 hover:text-blue-400 transition-colors">
+          <a href="/" class="text-slate-600 hover:text-blue-600 transition-colors">
             Privacy Policy
           </a>
-          <span class="text-slate-700">•</span>
-          <a href="/" class="text-slate-400 hover:text-blue-400 transition-colors">
+          <span class="text-slate-300">•</span>
+          <a href="/" class="text-slate-600 hover:text-blue-600 transition-colors">
             Terms of Service
           </a>
-          <span class="text-slate-700">•</span>
-          <a href="/" class="text-slate-400 hover:text-blue-400 transition-colors">
+          <span class="text-slate-300">•</span>
+          <a href="/" class="text-slate-600 hover:text-blue-600 transition-colors">
             Cookie Policy
           </a>
         </div>

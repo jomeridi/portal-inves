@@ -38,6 +38,8 @@ export const ui = {
         'stats.publications': 'Publicaciones',
         'stats.openAccess': 'Acceso Abierto',
         'footer.quickLinks': 'Enlaces rápidos',
+        'footer.dialnet': 'Proyecto interuniversitario desarrollado en colaboración con la Fundación Dialnet (Universidad de La Rioja)',
+        'footer.copyright': '© {year} Proyecto Inv-es. Financiado por la Unión Europea – NextGenerationEU',
     },
     ca: {
         'hero.title': 'Inv-es: Portal Interuniversitari de Producció Científica',
@@ -69,6 +71,8 @@ export const ui = {
         'stats.publications': 'Publicacions',
         'stats.openAccess': 'Accés Obert',
         'footer.quickLinks': 'Enllaços ràpids',
+        'footer.dialnet': 'Projecte interuniversitari desenvolupat en col·laboració amb la Fundación Dialnet (Universidad de La Rioja)',
+        'footer.copyright': '© {year} Proyecto Inv-es. Financiado por la Unión Europea – NextGenerationEU',
     },
     eu: {
         'hero.title': 'Inv-es: Ekoizpen Zientifikoko Unibertsitate arteko Ataria',
@@ -100,6 +104,8 @@ export const ui = {
         'stats.publications': 'Argitalpenak',
         'stats.openAccess': 'Sarbide Irekia',
         'footer.quickLinks': 'Esteka azkarrak',
+        'footer.dialnet': 'Fundación Dialnet-ekin (Errioxako Unibertsitatea) lankidetzan garatutako unibertsitate arteko proiektua',
+        'footer.copyright': '© {year} Proyecto Inv-es. Financiado por la Unión Europea – NextGenerationEU',
     },
     gl: {
         'hero.title': 'Inv-es: Portal Interuniversitario de Produción Científica',
@@ -131,5 +137,7 @@ export const ui = {
         'stats.publications': 'Publicacións',
         'stats.openAccess': 'Acceso Aberto',
         'footer.quickLinks': 'Ligazóns rápidas',
+        'footer.dialnet': 'Proxecto interuniversitario desenvolvido en colaboración coa Fundación Dialnet (Universidad de La Rioja)',
+        'footer.copyright': '© {year} Proyecto Inv-es. Financiado por la Unión Europea – NextGenerationEU',
     },
 };
