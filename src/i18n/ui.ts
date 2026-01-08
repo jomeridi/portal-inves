@@ -37,6 +37,7 @@ export const ui = {
         'stats.groups': 'Grupos',
         'stats.publications': 'Publicaciones',
         'stats.openAccess': 'Acceso Abierto',
+        'footer.quickLinks': 'Enlaces rápidos',
     },
     ca: {
         'hero.title': 'Inv-es: Portal Interuniversitari de Producció Científica',
@@ -67,6 +68,7 @@ export const ui = {
         'stats.groups': 'Grups',
         'stats.publications': 'Publicacions',
         'stats.openAccess': 'Accés Obert',
+        'footer.quickLinks': 'Enllaços ràpids',
     },
     eu: {
         'hero.title': 'Inv-es: Ekoizpen Zientifikoko Unibertsitate arteko Ataria',
@@ -97,6 +99,7 @@ export const ui = {
         'stats.groups': 'Taldeak',
         'stats.publications': 'Argitalpenak',
         'stats.openAccess': 'Sarbide Irekia',
+        'footer.quickLinks': 'Esteka azkarrak',
     },
     gl: {
         'hero.title': 'Inv-es: Portal Interuniversitario de Produción Científica',
@@ -127,5 +130,6 @@ export const ui = {
         'stats.groups': 'Grupos',
         'stats.publications': 'Publicacións',
         'stats.openAccess': 'Acceso Aberto',
+        'footer.quickLinks': 'Ligazóns rápidas',
     },
 };
