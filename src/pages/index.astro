@@ -1,6 +1,10 @@
 ---
-// This file is required by Astro i18n when using prefixDefaultLocale: true
-// Astro will automatically handle the redirect to /es/
+// src/pages/index.astro
+// Redirección estática a la locale por defecto
+const target = import.meta.env.BASE_URL + "es/";
 ---
 <!DOCTYPE html>
-<meta http-equiv="refresh" content="0;url=/es/" />
+<meta http-equiv="refresh" content={`0;url=${target}`} />
+<script define:vars={{ target }}>
+  window.location.replace(target);
+</script>
